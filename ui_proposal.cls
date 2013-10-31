@@ -31,6 +31,7 @@
 
 \logo{logo.pdf}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \def\makefullpage{
 \thispagestyle{empty}
 \setlength{\textwidth}{205mm}
@@ -63,9 +64,8 @@
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % صفحه عنوان
-\makefullpage
 \def\maketitlepage{
-
+\makefullpage
 \begin{center}
 بسمه‌تعالی\\
 \includegraphics[scale=.5]{\@logo}\\
@@ -91,6 +91,19 @@
 \end{tabular}
 
 
+
+\pagebreak
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\makesignaturepage{
+% صفحه امضاها
+\pagebreak
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\makeethicspage{
+%%% صفحه منشور اخلاق پژوهش
 
 \pagebreak
 }

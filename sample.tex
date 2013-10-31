@@ -1,5 +1,7 @@
 % !TeX program = xelatex
-\documentclass{ui_proposal}
+% !TeX spellcheck = fa_IR
+
+\documentclass{../ui_proposal/ui_proposal}
 
 \usepackage[colorlinks=true]{hyperref}
 
@@ -8,10 +10,14 @@
 \usepackage{listings}
 \usepackage{color}
 \usepackage{float}
+\usepackage{hyperref}
+\usepackage[numbers, sort&compress]{natbib}
+\usepackage{hypernat}
+\usepackage[all]{hypcap}
 %\usepackage{showframe}
 \usepackage{xepersian}
-\settextfont[Scale=1.15]{XB Niloofar}
-\setiranicfont[Scale=1.15]{XB Zar Oblique}
+\settextfont{XB Niloofar}
+\setiranicfont{XB Zar Oblique}
 \setdigitfont{Parsi Digits}
 
 
@@ -29,7 +35,75 @@
 \مقطع{دکتری}
 \سنوات{۴.۵}
 \begin{document}
-\maketitlepage
+%\maketitlepage
 
-\section{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\قسمت{شرح و بیان مسئله پژوهشی}
+\برچسب{sec:problem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\قسمت{پیشینه و تاریخچه موضوع تحقیق} % مطالعات و تحقیقاتی که در رابطه با این موضوع صورت گرفته و نتایج حاصل از آن
+\برچسب{sec:literature_review}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\قسمت{اهداف تحقیق}
+\برچسب{sec:goals}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\قسمت{اهمیت و ارزش تحقیق}
+\برچسب{sec:importance}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\قسمت{کاربرد  و نتایج تحقیق} % (رفع نیازهای ملی، ارائه نظریه جدید، عبور از مرزهای دانش، انتشارات علمی،ثبت اختراع، تولید محصول و تجاری سازی و ...)
+\برچسب{sec:results}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\قسمت{فرضیه‌ها یا سوال‌های تحقیق}
+\برچسب{sec:research_question}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\قسمت{روش تحقیق}
+\برچسب{sec:methodology}
+
+\زیرقسمت{نوع مطالعه و روش بررسی فرضیه‌ها و یا پاسخ‌گوئی به سوالات} %(توصیفی، تجربی، تحلیل محتوا، اسنادی، تاریخی و ...)} 
+\برچسب{subsec:type}
+
+\زیرقسمت{مراحل اجرایی تحقیق}
+\برچسب{subsec:steps}
+
+\زیرقسمت{جامعه آماری} % در صورت لزوم
+\برچسب{subsec:population}
+
+\زیرقسمت{روش و طرح نمونه‌برداری}
+\برچسب{subsec:sampling}
+
+\زیرقسمت{حجم نمونه و روش محاسبه}
+\برچسب{subsec:sample_size}
+
+\زیرقسمت{ابزار گردآوری داده‌ها} % (پرسش‌نامه، مصاحبه و ...)
+\برچسب{subsec:data_tools}
+
+\زیرقسمت{ابزار تجزیه و تحلیل}
+\برچسب{subsec:analyze_tools}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+\bibliographystyle{unsrtnat}
+\latin
+\renewcommand{\bibname}{\rl{{مراجع}\hfill}}
+\bibliography{references.bib}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\قسمت{جدول زمانی و مراحل اجرا}
+\برچسب{sec:schedule}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\قسمت{هزینه‌های ضروری درخواستی} % مبلغ و شرح کامل آن پیوست گردد.
+\برچسب{sec:costs}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makesignaturepage
+\makeethicspage
+
+
 \end{document}
