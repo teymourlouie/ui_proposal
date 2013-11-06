@@ -3,7 +3,7 @@
 \LoadClass[12pt,a4paper]{article}
 
 \ProcessOptions
-\RequirePackage{amsmath, amsthm, graphicx, fancybox, bbding, pdftexcmds, colortbl, multirow}
+\RequirePackage{amsmath, amsthm, graphicx, fancybox, bbding, pdftexcmds, colortbl, multirow, geometry, hhline, lipsum}
 
 
 %مشخصات پایان‌نامه
@@ -90,48 +90,51 @@
 \fundamental{0}
 \development{0}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\makedoublespace{
+\qquad\qquad
+}
 
 \def\makefullpage{
 \thispagestyle{empty}
-\setlength{\textwidth}{202mm}
-\setlength{\textheight}{285mm}
-\setlength{\headsep}{0cm}
-\setlength{\oddsidemargin}{1cm}
-
-\setlength{\marginparwidth}{0pt}
-\setlength{\hoffset}{-1.30in}
-\setlength{\voffset}{-1.25in}
-\setlength{\footskip}{10pt}
+\newgeometry{ignoreall=true, includeheadfoot=false, marginparwidth=0cm, marginparsep=0cm, textwidth=202mm, headheight=0cm, headsep=0cm, top=3mm, bottom=5mm, right=0.5cm, left=0.5cm}
 }
 
 \def\makelevelbox{
-\ovalbox{دکتری  
-
+\begin{mdframed}[roundcorner=10pt, needspace=0mm, rightmargin=6.3cm, leftmargin=6.3cm, innertopmargin=1mm, innerbottommargin=1mm, align=center, innerrightmargin=5mm, innerleftmargin=2mm]
+{
+\textbf{\centering درخواست تصویت طرح پیشنهادیه پایان‌نامه}
+}
+\end{mdframed}
+\vspace{-4mm}
+\begin{mdframed}[roundcorner=10pt,  rightmargin=6.8cm, leftmargin=6.8cm, innertopmargin=1mm, innerbottommargin=1mm]
+{
+ دکتری  
 \ifnum \pdf@strcmp{\@level}{دکتری} = 0
 \SquareSolid
 \else 
 \Square
 \fi
- \qquad
+ \qquad \qquad
  کارشناسی ارشد
 \ifnum \pdf@strcmp{\@level}{کارشناسی ارشد} = 0
 \SquareSolid
 \else 
 \Square
 \fi
- }
+}
+\end{mdframed}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % صفحه عنوان
-\makefullpage
-\def\maketitlepage{
 
+\def\maketitlepage{
+\makefullpage
 \begin{center}
 بسمه‌تعالی\\
 \includegraphics[scale=.5]{\@logo}\\
 \textbf{‫مدیریت امور پژوهشی دانشگاه اصفهان‬}\\
-\ovalbox{\textbf{درخواست تصویت طرح پیشنهادیه پایان‌نامه} } \\
-\makelevelbox \\
+%\ovalbox{\textbf{درخواست تصویت طرح پیشنهادیه پایان‌نامه} } \\
+\makelevelbox
 
 \end{center}
 
@@ -140,6 +143,8 @@
 \\
 \renewcommand{\arraystretch}{1.3}
 \setlength{\tabcolsep}{4pt}
+\vspace{-6.5mm}
+\begin{center}
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
 \grayrow
@@ -150,9 +155,12 @@
 \hline
 \end{tabular}
 \\
+\end{center}
 
 %supervisors
 \noindent \textbf{مشخصات استاد(ان) راهنما:} \\
+\vspace{-6.5mm}
+\begin{center}
 \begin{tabular}{|c|p{4cm}|p{1.2cm}|p{2.7cm}|p{1.5cm}|p{1.8cm}|p{2.39cm}|p{1.35cm}|p{1.36cm}|}
 \hline
 \grayrow
@@ -172,7 +180,11 @@
 \hline 
 
 %fill first supervisor
+\ifnum \pdf@strcmp{\@supervisor}{} = 0
+\tallrow 1 & & & & & & & & \tabularnewline
+\else
 \tallrow 1 &  \centering {\@supervisor} & \centering {\@supdepartment} &  \centering {\@supuniversity} &  \centering {\@suplevel} &  \centering {\@supspeciality} &  \centering {\@supempltype} &  \centering {\@supmasterstnum} & \centering {\@supphdstnum}   \tabularnewline
+\fi
 \hline
 
 %fill the second supervisor if exist
@@ -183,15 +195,22 @@
 \fi
 \end{tabular}
 \\
+\end{center}
 
 %advisors
 \noindent \textbf{مشخصات استاد(ان) مشاور:} \\
+\vspace{-6.5mm}
+\begin{center}
 \begin{tabular}{|c|m{4cm}|m{1.2cm}|m{2.7cm}|m{1.5cm}|m{1.8cm}|m{5.7cm}|}
 \hline
 \grayrow
 \centering {\textbf{ردیف}} & \centering {\textbf{نام و نام خانوادگی}} & \centering {\textbf{گروه آموزشی}}& \centering {\textbf{دانشگاه محل خدمت}} & \centering {\textbf{مرتبه}} & \centering {\textbf{تخصص}} & \centering {\textbf{ملاحظات}}  \tabularnewline \hline
 %fill first advisor
+\ifnum \pdf@strcmp{\@advisor}{} = 0
+\tallrow & & & & & & \tabularnewline
+\else
 \tallrow 1 &  \centering {\@advisor} & \centering {\@addepartment} &  \centering {\@aduni} &  \centering {\@adlevel} &  \centering {\@adspeciality} & \centering { \@adcomment}  \tabularnewline
+\fi
 \hline
 %fill the second advisor if exist
 \ifnum \pdf@strcmp{\@secadvisor}{} = 0
@@ -201,26 +220,30 @@
 \fi
 \end{tabular}
 \\
-\parbox{19.5cm}
+\end{center}
+\parbox{198mm}
 {\small {تذکر: در صورتی‌که اساتید فوق عضو هیأت علمی دانشگاه اصفهان نمی‌باشند، آدرس، شماره تلفن و حکم کارگزینی آن‌ها ذیلاً ضمیمه گردد.}}\\\\
 \noindent \textbf{ثبت پیشنهادیه پایان‌نامه در سایت:}
 \\
-\parbox{19.5cm}
+\parbox{198mm}
 {\small {تذکر: مطابق بخشنامه مورخ ۱۳۸۶/۰۹/۱۳ شماره ۳۳/۴۷۵۶ وزارت علوم و تحقیقات و فناوری، نسبت به ثبت پیشنهادیه پایان‌نامه در سایت \mbox{irandoc.ac.ir} الزامی و فرم ثبت نیز ضمیمه گردد.}}
+\vspace{-3mm}
 \begin{center}
 \begin{tabular}{|m{4.5cm}|m{4.5cm}|m{4.5cm}|}
 \hline
 \grayrow
 \centering {\textbf{آدرس سایت}} & \centering {\textbf{شماره ثبت}} & \centering { \textbf{تاریخ ثبت}} \tabularnewline \hline
-\tallrow \centering {\@regsite} & \centering {\@regnum} &  \centering {\@regdate}  \tabularnewline \hline
+\tallrow \centering {\@regsite} & \centering {کد رهگیری: \@regnum} &  \centering {\@regdate}  \tabularnewline \hline
 \end{tabular}
 \end{center}
 
 
 \noindent \textbf{مشخصات اولویت پژوهشی:} \\
-\parbox{19.5cm}
+\parbox{198mm}
 {\small {تذکر: مطابق بخشنامه مورخ ۱۳۸۹/۰۷/۱۱ شماره ۳/۲۴۲۹۳ وزارت علوم و تحقیقات و فناوری، انتخاب موضوع رساله از اولویت‌های پژوهشی کشور الزامی است.}}
 \\
+\vspace{-3mm}
+\begin{center}
 \begin{tabular}{|c|m{5.6cm}|m{5cm}|m{5cm}|}
 \hline
 \grayrow
@@ -228,6 +251,7 @@
 \tallrow \centering {\@prioritycode} & \centering {\@prioritytitle} &  \centering {\@supporter} &  \centering {\@supportedissue} \tabularnewline \hline
 \end{tabular}
 \\
+\end{center}
 
 \noindent \textbf{مشخصات پایان‌نامه:}\\
 \vspace{1mm}
@@ -285,17 +309,108 @@
 }\\
 \vspace{3mm}
 \pagebreak
+\restoregeometry
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\datesig{\textbf {تاریخ و امضا:}}
 \def\makesignaturepage{
 % صفحه امضاها
+%\pagebreak
+\newgeometry{ignoreall=true, includeheadfoot=false, marginparwidth=0cm, marginparsep=0cm, textwidth=202mm, headheight=0cm, headsep=0cm, top=3mm, bottom=5mm, right=0.5cm, left=0.5cm}%end of newgeometry
+
+\begin{mdframed}[roundcorner=20pt, linewidth=0.4pt, outerlinewidth=0.4pt, middlelinewidth=0.4pt, rightmargin=1cm, leftmargin=1cm, innertopmargin=2cm, innerbottommargin=2cm, innerrightmargin=0.8cm, innerleftmargin=1cm]
+{
+\begin{tabular}{r p{4cm} r p{4cm}}
+%supervisors
+%first supervisor
+\tallrow\textbf {استاد/استادان راهنما:} \makedoublespace &\@supervisor \makedoublespace&\qquad \datesig &\dotfill\\
+%second supervisor if exists
+\ifnum \pdf@strcmp{\@secsupervisor}{} = 0
+\else
+\tallrow \makedoublespace &\@secsupervisor \makedoublespace&\qquad&\dotfill\\
+\fi
+%advisors
+%if first advisor exist
+\ifnum \pdf@strcmp{\@advisor}{} = 0
+\tallrow\textbf {استاد/استادان مشاور:} \makedoublespace&\dotfill&\qquad \datesig &\dotfill\\
+\else
+\tallrow\textbf {استاد/استادان مشاور:}\makedoublespace &\@advisor \makedoublespace&\qquad \datesig &\dotfill\\
+\fi
+%second advisor if exists
+\ifnum \pdf@strcmp{\@secadvisor}{} = 0
+\else
+\tallrow \makedoublespace&\@secadvisor \makedoublespace&\qquad &\dotfill\\
+\fi
+%student
+\tallrow\textbf {دانشجو} \makedoublespace&\@student \makedoublespace&\qquad \datesig &\dotfill\\
+\end{tabular}
+}
+\end{mdframed}
+%%%%%%%%%%%%%%%%****************%%%%%%%%%%%%%%%%
+\vspace{1.5cm}
+\begin{mdframed}[roundcorner=20pt, linewidth=0.4pt, outerlinewidth=0.4pt, middlelinewidth=0.4pt, rightmargin=1cm, leftmargin=1cm, innertopmargin=2cm, innerbottommargin=2cm, innerrightmargin=0.8cm, innerleftmargin=1cm]
+{
+\parbox{160mm}
+{
+\textbf {الف- موضوع پایان‌نامه آقا / خانم
+\textnormal{\@student}
+در شورای تحصیلات تکمیلی گروه در 
+\mbox {تاریخ \parbox{2cm}{\textnormal{\dotfill}}}
+ مورد بررسی قرار گرفت و به تصویب رسید.
+}
+}\\%end parbox
+
+\begin{center}
+\begin{tabular}{r p{3cm} r p{3cm}}
+\tallrow\textbf {دکتر:} &\dotfill &\makedoublespace \textbf {دکتر:} & \dotfill\\
+\tallrow\textbf {نماینده تحصیلات تکمیلی گروه:} &\dotfill &\makedoublespace \textbf {مدیر گروه أموزشی:} & \dotfill\\
+\end{tabular}
+\end{center}
+}%end mdframed
+\end{mdframed}
+%%%%%%%%%%%%%%%%****************%%%%%%%%%%%%%%%%
+\vspace{1.5cm}
+\begin{mdframed}[roundcorner=20pt, linewidth=0.4pt, outerlinewidth=0.4pt, middlelinewidth=0.4pt, rightmargin=1cm, leftmargin=1cm, innertopmargin=2cm, innerbottommargin=2cm, innerrightmargin=0.8cm, innerleftmargin=1cm]
+{
+\parbox{160mm}
+{
+\textbf {ب- موضوع این پایان‌نامه پس از بحث و بررسی در شورای تحصیلات تکمیلی دانشکده در
+\mbox {تاریخ \parbox{2cm}{\textnormal{\dotfill}}}
+به تصویب نهایی رسید.
+}
+}\\\\%end parbox
+\begin{flushleft}
+\parbox{55mm}
+{
+\doublespacing
+\textbf {\mbox {دکتر \quad \parbox{4.1cm}{\textnormal{\dotfill}}}\\
+معاون پژوهشی و تحصیلات تکمیلی\\
+\mbox {دانشکده \parbox{4cm}{\textnormal{\dotfill}}}\\
+}
+}\\%end parbox
+\end{flushleft}
+\vspace{-1cm}
+}
+\end{mdframed}
 \pagebreak
+\restoregeometry
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\makeethicspage{
-%%% صفحه منشور اخلاق پژوهش
-
 \pagebreak
+%%% صفحه منشور اخلاق پژوهش
+\newgeometry{ignoreall=true, includeheadfoot=false, marginparwidth=0cm, marginparsep=0cm, textwidth=200mm, headheight=0cm, headsep=0cm, top=4mm, bottom=4mm, right=0.8cm, left=0.8cm}
+\begin{mdframed}[roundcorner=20pt, innerrightmargin =3mm, innerleftmargin=3mm, linewidth=0.4pt, outerlinewidth=0.4pt, middlelinewidth=0.4pt]
+{
+\begin{center}
+\vspace{1cm}
+\includegraphics[scale=.1]{iranlogo.eps}\\
+\end{center}
+}
+\input{ethics.tex}
+\end{mdframed}
+\pagebreak
+\restoregeometry
 }
