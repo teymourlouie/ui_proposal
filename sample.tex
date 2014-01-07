@@ -10,30 +10,45 @@
 \usepackage{listings}
 \usepackage{color}
 \usepackage{float}
-\usepackage{hyperref}
 \usepackage{hhline}
 \usepackage{colortbl}
+\usepackage{hyperref}
 \usepackage[framemethod=TikZ]{mdframed}
 \usepackage{lipsum}
 \usepackage{setspace}
 \usepackage{diagbox}
 \usepackage[numbers, sort&compress]{natbib}
+
 \usepackage{hypernat}
+\usepackage{xcolor}
+
+%در نسخه پرینت از جالت کامنت‌ دربیاورید تا لینک‌ها سیاه بوده و رنگی نباشند.
+%\hypersetup{
+%	citecolor=black,
+%	linkcolor=black
+%}
+
 \usepackage[all]{hypcap}
-%\usepackage{showframe}
+
 \usepackage{xepersian}
 \settextfont{XB Niloofar}
-\setiranicfont{XB Zar Oblique}
 \setdigitfont{Parsi Digits}
 
 
 \newcommand{\mylr}[1]{\texorpdfstring{\lr{#1}}{#1}}
+\eqenvironment{نکات}{itemize}
+\newtheorem{definition}{تعریف}
+\eqenvironment{تعریف}{definition}
+\eqcommand{مورد}{item}
+
+\renewcommand{\descriptionlabel}[1]%
+{\hspace{\labelsep} $\checkmark$ \hspace{\labelsep}\textbf{#1}}
 
 \آرم{logo2.jpg}
 \دانشجو{مهدی تیمورلوئی}
 \شماره‌دانشجویی{901411702}
 \ایمیل{m.teymourlouie@eng.ui.ac.ir}
-\تلفن‌تماس{09143012589}
+\تلفن‌تماس{}
 \گروه{کامپیوتر}
 \دانشکده{فنی و مهندسی}
 \‌رشته‌تحصیلی{مهندسی کامپیوتر}
@@ -45,59 +60,59 @@
 \گروه‌راهنما{کامپیوتر}
 \دانشگاه‌راهنما{دانشگاه اصفهان}
 \مرتبه‌راهنما{دانشیار}
-\تخصص‌راهنما{}
+\تخصص‌راهنما{وب معنایی، داده‌کاوی}
 \استخدام‌راهنما{رسمی}
 \تعدادارشدراهنما{}
 \تعداددکتری‌راهنما{}
 
-\استا‌دراهنمای‌دوم{احمد زائری}
-\گروه‌راهنمای‌دوم{کامپیوتر}
-\دانشگاه‌راهنمای‌دوم{دانشگاه اصفهان}
-\مرتبه‌راهنمای‌دوم{استادیار}
-\تخصص‌راهنمای‌دوم{}
-\استخدام‌راهنمای‌دوم{پیمانی}
-\تعدادارشدراهنمای‌دوم{}
-\تعداددکتری‌راهنمای‌دوم{}
+%\استا‌دراهنمای‌دوم{احمد زائری}
+%\گروه‌راهنمای‌دوم{کامپیوتر}
+%\دانشگاه‌راهنمای‌دوم{دانشگاه اصفهان}
+%\مرتبه‌راهنمای‌دوم{استادیار}
+%\تخصص‌راهنمای‌دوم{وب معنایی}
+%\استخدام‌راهنمای‌دوم{پیمانی}
+%\تعدادارشدراهنمای‌دوم{}
+%\تعداددکتری‌راهنمای‌دوم{}
 
 %\استادمشاور{}
-\گروه‌مشاور{کامپیوتر}
-\دانشگاه‌مشاور{}
-\مرتبه‌مشاور{}
-\تخصص‌مشاور{}
-\ملاحظات‌مشاور{}
+%\گروه‌مشاور{}
+%\دانشگاه‌مشاور{}
+%\مرتبه‌مشاور{}
+%\تخصص‌مشاور{}
+%\ملاحظات‌مشاور{}
 
-\استادمشاوردوم{}
-\گروه‌مشاوردوم{}
-\دانشگاه‌مشاوردوم{}
-\مرتبه‌مشاوردوم{}
-\تخصص‌مشاوردوم{}
-\ملاحظات‌مشاوردوم{}
+%\استادمشاوردوم{}
+%\گروه‌مشاوردوم{}
+%\دانشگاه‌مشاوردوم{}
+%\مرتبه‌مشاوردوم{}
+%\تخصص‌مشاوردوم{}
+%\ملاحظات‌مشاوردوم{}
 
 \سایت{irandoc.ac.ir}
-\شماره‌ثبت{۴۵۶۸۹۹۰}
-\تاریخ‌ثبت{۱۳۹۲/۰۷/۲۰}
+\شماره‌ثبت{}
+\تاریخ‌ثبت{}
 
-\کداولویت{۸-۷}
-\عنوان‌اولویت{وب معنایی خیلی خوب است}
-\حمایت‌کننده{گوگل}
-\موضوع‌مورد‌حمایت{-}
+\کداولویت{9-7}
+\عنوان‌اولویت{نظام‌های الکترونیکی (دولت،تجارت، سلامت و نظایر آن) و ارتقاء کمی و کیفی}
+\حمایت‌کننده{}
+\موضوع‌مورد‌حمایت{}
+\عنوان‌فارسی {یک روش اشکال‌زدایی برای ارتقای درستی آنتولوژی}
+\عنوان‌لاتین{A Debugging Approach to Improve Ontology Correctness}
 
-\عنوان‌فارسی {اشکال‌زدایی از آنتولوژی‌ها با تأکید بر حذف ناسازگاری}
-\عنوان‌لاتین{Ontology Debugging}
-
+%برای تیک خوردن هر کدام، کافی است از حالت کامنت خارج شود.
 \کاربردی{1}
 %\بنیادی{1}
 \توسعه‌ای{1}
 
-\کلیدواژه‌ها{
-\begin{enumerate}
-\item اشکال‌زدایی
-\item آنتولوژی
-\item انسجام
-\item تناقض
-\end{enumerate}
-}
+\کلیدواژه‌ها{ 
+\شروع{شمارش}
+\مورد اشکال‌زدایی (\lr{Debugging})
+\مورد آنتولوژی (\lr{Ontology})
+\مورد درستی (\lr{Correctness})
+\مورد ناسازگاری (\lr{Incoherency})
+\مورد تناقض (\lr{Incosistency})
 
+\پایان{شمارش} }
 \begin{document}
 \maketitlepage
 
@@ -118,7 +133,7 @@
 \برچسب{sec:importance}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\قسمت{کاربرد  و نتایج تحقیق} % (رفع نیازهای ملی، ارائه نظریه جدید، عبور از مرزهای دانش، انتشارات علمی،ثبت اختراع، تولید محصول و تجاری سازی و ...)
+\قسمت{کاربرد  نتایج تحقیق} % (رفع نیازهای ملی، ارائه نظریه جدید، عبور از مرزهای دانش، انتشارات علمی،ثبت اختراع، تولید محصول و تجاری سازی و ...)
 \برچسب{sec:results}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -151,86 +166,89 @@
 \برچسب{subsec:analyze_tools}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-{
-\bibliographystyle{unsrtnat}
+\pagebreak
 \latin
-\renewcommand{\bibname}{\rl{{مراجع}\hfill}}
-\bibliography{references.bib}
-}
+
+\bibliographystyle{ieeetr}
+\renewcommand{\refname}{\rl{{مراجع}\hfill}}
+\bibliography{your_references}   % نام دیتابیس مراجع  شما با فرمت bibtex
+
+\persian
+\pagebreak
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+\restoregeometry
+\newgeometry{includeheadfoot=false, marginparwidth=0cm, marginparsep=0cm, textwidth=160mm, headheight=0cm, headsep=0cm}%end of newgeometry
 \قسمت{جدول زمانی و مراحل اجرا}
 \برچسب{sec:schedule}
-\pagebreak
-\newgeometry{ignoreall=true, includeheadfoot=false, marginparwidth=0cm, marginparsep=0cm, textwidth=200mm, headheight=0cm, headsep=0cm, top=3mm, bottom=5mm, right=0.5cm, left=0.5cm}%end of newgeometry
-
-\textbf{جدول زمانی و مراحل اجرا} \\
 \begin{center}
+\vspace{1cm}
 \begin{tabular}{|m{1.5cm}|m{9cm}|m{2cm}|}
 \hline
- \centering {\textbf{شماره}} & \centering {\textbf{فعالیت}}&\centering {\textbf{زمان (ماه)}} \tabularnewline
+\grayrow \centering {\textbf{شماره}} & \centering {\textbf{فعالیت}}&\centering {\textbf{زمان (ماه)}} \tabularnewline
 \hline
-& & \tabularnewline \hline
-& & \tabularnewline \hline
-& & \tabularnewline \hline
-& & \tabularnewline \hline
-& & \tabularnewline \hline
-& & \tabularnewline \hline
-& & \tabularnewline \hline
+\وسط‌چین 1 & مطالعه روش‌های بررسی درستی & \وسط‌چین 4 \tabularnewline \hline
+\وسط‌چین 2& ارائه روشی برای شناسایی و رفع گزاره‌های نادرست & \وسط‌چین  8 \tabularnewline \hline
+\وسط‌چین 3& پیاده‌سازی در قالب یک افزونه‌ در  \lr{Prot\'eg\'e} & \وسط‌چین 2\tabularnewline \hline
+\وسط‌چین  4& تهیه مجموعه داده آزمون & \وسط‌چین 4 \tabularnewline \hline
+\وسط‌چین  5& آزمون و ارزیابی & \وسط‌چین 5 \tabularnewline \hline
+\وسط‌چین  6& نگارش مقالات و انتشار آن‌ها & \وسط‌چین  12 \tabularnewline \hline
+\وسط‌چین  7& نگارش پایان‌نامه، برگزاری دفاع و انجام اصلاحات & \وسط‌چین  7 \tabularnewline \hline
 \end{tabular}
 \end{center}
 \vspace{1cm}
 \begin{center}
 \setlength{\tabcolsep}{2pt}
-\begin{tabular}{|m{2.2cm}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|}
+\def\markcell{\cellcolor[gray]{.5}}
+\begin{tabular}{|m{2.2cm}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|m{9pt}|}
 \hline
-\multirow {2} {*} { \diagbox [dir=NE] {\small \bf{زمان}} {\small \bf{فعالیت}}} & 
-\multicolumn {1}{c}{}
-& \multicolumn {10}{c}{۱۳۹۲}&\multicolumn {1}{c|}{}
- &\multicolumn {1}{c}{}
-& \multicolumn {10}{c}{۱۳۹۳} &\multicolumn {1}{c|}{}
-&\multicolumn {1}{c}{}
-& \multicolumn {10}{c}{۱۳۹۴}
-&\multicolumn {1}{c|}{} \\
-\cline{2-37}
-& \centering {\scriptsize {‌۱}} & \centering {\scriptsize {‌۲}} & \centering {\scriptsize {‌۳}} & \centering {\scriptsize {‌۴}} & \centering {\scriptsize {‌۵}} & \centering {\scriptsize {۶}} & \centering {\scriptsize {‌۷}} & \centering {\scriptsize {‌۸}} & \centering {\scriptsize {۹}} & \centering {\scriptsize {۱۰}} & \centering {\scriptsize {۱۱}} & \centering {\scriptsize {۱۲}}
+\multirow {2} {*} {\diagbox [dir=NE] {\small \bf{زمان}} {\small \bf{فعالیت}}}
+& \multicolumn {6}{c|}{\graycell ۱۳۹۲}
+ &\multicolumn {1}{c}{\graycell}
+& \multicolumn {10}{c}{\graycell۱۳۹۳} &\multicolumn {1}{c|}{\graycell}
+&\multicolumn {1}{c}{\graycell}
+& \multicolumn {10}{c}{\graycell۱۳۹۴}
+&\multicolumn {1}{c|}{\graycell} \\
+\cline{2-31}
+& \centering {\scriptsize {‌۷}} & \centering {\scriptsize {‌۸}} & \centering {\scriptsize {۹}} & \centering {\scriptsize {۱۰}} & \centering {\scriptsize {۱۱}} & \centering {\scriptsize {۱۲}}
 & \centering {\scriptsize {‌۱}} &  \centering {\scriptsize {‌۲}} & \centering {\scriptsize {‌۳}} & \centering {\scriptsize {‌۴}} & \centering {\scriptsize {‌۵}} & \centering {\scriptsize {۶}} & \centering {\scriptsize {‌۷}} & \centering {\scriptsize {‌۸}} & \centering {\scriptsize  {۹}} & \centering {\scriptsize {۱۰}} & \centering {\scriptsize {۱۱}} & \centering {\scriptsize {۱۲}}
 & \centering {\scriptsize {‌۱}} & \centering {\scriptsize {‌۲}} & \centering {\scriptsize {‌۳}} & \centering {\scriptsize {‌۴}} & \centering {\scriptsize {‌۵}} & \centering {\scriptsize {۶}}& \centering {\scriptsize {‌۷}} & \centering {\scriptsize {‌۸}} & \centering {\scriptsize {۹}} & \centering {\scriptsize {۱۰}} & \centering {\scriptsize  {۱۱}} & \centering {\scriptsize {۱۲}}
  \tabularnewline
 \hline 
 \tallrow \centering {۱}
-&&&&&&&&&&&&
-&&&&&&&&&&&&
-&&&&&&&&&&&&
+& & &  \markcell& \markcell& \markcell& \markcell
+& & & & & & & & & & & & 
+& & & & & & & & & & & &
 \tabularnewline \hline
 \tallrow \centering {۲} 
-&&&&&&&&&&&&
-&&&&&&&&&&&&
-&&&&&&&&&&&&
+&  & &  & & &\markcell 
+\markcell&\markcell &\markcell &\markcell &\markcell &\markcell &\markcell &\markcell & & & & & 
+& & & & & & & & & & & &
 \tabularnewline \hline
 \tallrow \centering {۳} 
-&&&&&&&&&&&&
-&&&&&&&&&&&&
-&&&&&&&&&&&&
+&  & &  & & & 
+& & & & & &\markcell &\markcell & & & & & 
+& & & & & & & & & & & &
  \tabularnewline \hline
 \tallrow \centering {۴} 
-&&&&&&&&&&&&
-&&&&&&&&&&&&
-&&&&&&&&&&&&
+&  & &  & & & 
+& & & & & & &\markcell &\markcell &\markcell &\markcell & & 
+& & & & & & & & & & & &
 \tabularnewline \hline
 \tallrow \centering {۵} 
-&&&&&&&&&&&&
-&&&&&&&&&&&&
-&&&&&&&&&&&&
+&  & &  & & & 
+& & & & & & & &\markcell &\markcell &\markcell &\markcell & \markcell
+& & & & & & & & & & & &
 \tabularnewline \hline
 \tallrow \centering {۶} 
-&&&&&&&&&&&&
-&&&&&&&&&&&&
-&&&&&&&&&&&&
+&  & &  & & & 
+& & & & & & & & & &\markcell &\markcell &\markcell 
+&\markcell &\markcell &\markcell & \markcell&\markcell &\markcell &\markcell &\markcell &\markcell & & &
 \tabularnewline \hline
 \tallrow \centering {۷} 
-&&&&&&&&&&&&
-&&&&&&&&&&&&
-&&&&&&&&&&&&
+&  & &  & & & 
+& & & & & & & & & & & & 
+& & & & &\markcell &\markcell &\markcell &\markcell &\markcell &\markcell & \markcell&
 \tabularnewline \hline
 \end{tabular}
 \end{center}
@@ -239,25 +257,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \قسمت{هزینه‌های ضروری درخواستی} % مبلغ و شرح کامل آن پیوست گردد.
 \برچسب{sec:costs}
-
-%\newgeometry{ignoreall=true, includeheadfoot=false, marginparwidth=0cm, marginparsep=0cm, textwidth=200mm, headheight=0cm, headsep=0cm, top=3mm, bottom=5mm, right=0.5cm, left=0.5cm}%end of newgeometry
-
-%\begin{mdframed}[roundcorner=20pt, innerrightmargin =3mm, innerleftmargin=3mm, linewidth=0.4pt, outerlinewidth=0.4pt, middlelinewidth=0.4pt, frametitle = {\textbf{هزینه‌های ضروری درخواستی: (مبلغ و شرح کامل آن) پیوست گردد.}}, skipabove=1cm, skipbelow =1cm, rightmargin=1cm, leftmargin=1cm]
-%{
 \begin{center}
 \begin{tabular}{|m{1.5cm}|m{5cm}|m{2.5cm}|m{2.5cm}|m{2.5cm}|}
 \hline
 \grayrow
 \tallrow \centering {\textbf{ردیف}} & \centering {\textbf{وسایل و تجهیزات }}&\centering {\textbf{تعداد}} & \centering {\textbf{برآورد هزینه}} & \centering {\textbf{جمع}} \tabularnewline
 \hline
- & & & & \tabularnewline
- & & & & \tabularnewline
+\وسط‌چین  1& رایانه‌ با قدرت پردازشی مناسب و با دارا بودن حداقل 24 گیگابایت رم & \وسط‌چین  1 & 25000000& 25000000 \tabularnewline
  & & & & \tabularnewline
  & & & & \tabularnewline
  & & & & \tabularnewline \hline
 \end{tabular}
 \end{center}
-\vspace{1cm}
+\vspace{.10cm}
 \begin{center}
 \begin{tabular}{|m{1.5cm}|m{5cm}|m{2.5cm}|m{2.5cm}|m{2.5cm}|}
 \hline
@@ -271,33 +283,32 @@
  & & & & \tabularnewline \hline
 \end{tabular}
 \end{center}
-\vspace{1cm}
+\vspace{.10cm}
 \begin{center}
 \begin{tabular}{|m{1.5cm}|m{5cm}|m{2.5cm}|m{2.5cm}|m{2.5cm}|}
 \hline
 \grayrow
 \tallrow \centering {\textbf{ردیف}} & \centering {\textbf{سایر موارد }}&\centering {\textbf{تعداد}} & \centering {\textbf{برآورد هزینه}} & \centering {\textbf{جمع}} \tabularnewline
 \hline
- & & & & \tabularnewline
- & & & & \tabularnewline
+\وسط‌چین 1 & چاپ مقالات و شرکت در کنفرانس‌ &\وسط‌چین  3& 4000000& 15000000 \tabularnewline
+\وسط‌چین 2 &  چاپ و تکثیر پایان‌نامه &\وسط‌چین  5 &  500000& 2500000 \tabularnewline
  & & & & \tabularnewline
  & & & & \tabularnewline
  & & & & \tabularnewline \hline
 \end{tabular}
 \end{center}
-\vspace{0.5cm}
+\vspace{0.10cm}
 \begin{center}
-\framebox [14cm] [r]{
-\textbf {جمع کل هزینه‌های پیشنهادی:}
-} \\
+\framebox [15.5cm] [r]{
+\textbf {جمع کل هزینه‌های پیشنهادی:} 
+42500000 ریال
+\hspace{5mm}
+معادل چهار میلیون و دویست و پنجاه هزار تومان
+}
 \end{center}
-%}
-%\end{mdframed}
 \pagebreak
 \restoregeometry
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \makesignaturepage
 \makeethicspage
-
-
 \end{document}
