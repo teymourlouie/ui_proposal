@@ -100,13 +100,28 @@
 }
 
 \def\makelevelbox{
+%\ovalbox{دکتری  
+%
+%\ifnum \pdf@strcmp{\@level}{دکتری} = 0
+%\SquareSolid
+%\else 
+%\Square
+%\fi
+% \qquad
+% کارشناسی ارشد
+%\ifnum \pdf@strcmp{\@level}{کارشناسی ارشد} = 0
+%\SquareSolid
+%\else 
+%\Square
+%\fi
+% }
 \begin{mdframed}[roundcorner=10pt, needspace=0mm, rightmargin=6.3cm, leftmargin=6.3cm, innertopmargin=1mm, innerbottommargin=1mm, align=center, innerrightmargin=5mm, innerleftmargin=2mm]
 {
 \textbf{\centering درخواست تصویت طرح پیشنهادیه پایان‌نامه}
 }
 \end{mdframed}
-\vspace{-4mm}
-\begin{mdframed}[roundcorner=10pt,  rightmargin=6.8cm, leftmargin=6.8cm, innertopmargin=1mm, innerbottommargin=1mm]
+\vspace{1mm}
+\begin{mdframed}[roundcorner=10pt, needspace=5mm, rightmargin=6.8cm, leftmargin=6.8cm, innertopmargin=1mm, innerbottommargin=1mm]
 {
  دکتری  
 \ifnum \pdf@strcmp{\@level}{دکتری} = 0
@@ -360,11 +375,30 @@
  مورد بررسی قرار گرفت و به تصویب رسید.
 }
 }\\%end parbox
-
+\vspace{0.7cm}
 \begin{center}
-\begin{tabular}{r p{3cm} r p{3cm}}
-\tallrow\textbf {دکتر:} &\dotfill &\makedoublespace \textbf {دکتر:} & \dotfill\\
-\tallrow\textbf {نماینده تحصیلات تکمیلی گروه:} &\dotfill &\makedoublespace \textbf {مدیر گروه أموزشی:} & \dotfill\\
+\begin{tabular}{c l}
+\parbox{9cm}{
+\textbf {دکتر: }
+\parbox{2.9cm}{\dotfill}\par
+\vspace{3mm}
+\textbf {نماینده تحصیلات تکمیلی گروه:} \ifnum \pdf@strcmp{\@department}{} = 0
+\parbox{2.9cm}{\dotfill}
+\else
+ \@department
+\fi
+}
+&
+\parbox{6.5cm}{\raggedleft
+\textbf {دکتر: }
+\parbox{3cm}{\dotfill} \par
+\vspace{3mm}
+\textbf {مدیر گروه آموزشی:} \ifnum \pdf@strcmp{\@department}{} = 0
+\parbox{2.9cm}{\dotfill}
+\else
+ \@department
+\fi
+}
 \end{tabular}
 \end{center}
 }%end mdframed
@@ -384,9 +418,13 @@
 \parbox{55mm}
 {
 \doublespacing
-\textbf {\mbox {دکتر \quad \parbox{4.1cm}{\textnormal{\dotfill}}}\\
+\textbf {\mbox {دکتر: \quad \parbox{4.1cm}{\textnormal{\dotfill}}}\\
 معاون پژوهشی و تحصیلات تکمیلی\\
-\mbox {دانشکده \parbox{4cm}{\textnormal{\dotfill}}}\\
+\mbox {دانشکده: \ifnum \pdf@strcmp{\@faculty}{} = 0
+ \parbox{4cm}{\textnormal{\dotfill}}
+\else
+{\textnormal \@faculty}
+\fi}\\
 }
 }\\%end parbox
 \end{flushleft}
