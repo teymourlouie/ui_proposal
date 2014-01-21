@@ -1,11 +1,35 @@
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{ui_proposal}[2013/10/28 v1.0]
+\ProvidesClass{ui_proposal}[2013/10/28 v1.3]
 \LoadClass[12pt,a4paper]{article}
 
 \ProcessOptions
-\RequirePackage{amsmath, amsthm, graphicx, fancybox, bbding, pdftexcmds, colortbl, multirow, geometry, hhline, lipsum, setspace}
+\RequirePackage{amsmath, amsthm, graphicx, fancybox, bbding, pdftexcmds, colortbl, multirow, geometry, hhline, lipsum, setspace, pgf, pgfpages}
 
-\onehalfspacing
+\doublespacing
+\setlength{\footskip}{50pt}
+\addtolength{\textheight}{6cm}
+\addtolength{\headsep}{-2cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pgfpagesdeclarelayout{boxed}
+{
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=1,%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {
+    border code=\pgfsetlinewidth{1pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.95\pgfphysicalwidth,%
+    resized height=.95\pgfphysicalheight,%
+    center=\pgfpoint{.5\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+}
+
+\pgfpagesuselayout{boxed}
 %مشخصات پایان‌نامه
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -102,7 +126,7 @@
 \def\makelevelbox{
 \begin{mdframed}[roundcorner=10pt, needspace=0mm, rightmargin=6.3cm, leftmargin=6.3cm, innertopmargin=1mm, innerbottommargin=1mm, align=center, innerrightmargin=5mm, innerleftmargin=2mm]
 {
-\textbf{\centering درخواست تصویت طرح پیشنهادیه پایان‌نامه}
+\textbf{\centering درخواست تصویب طرح پیشنهادیه پایان‌نامه}
 }
 \end{mdframed}
 \vspace{-4mm}
@@ -430,7 +454,7 @@
 \pagebreak
 %%% صفحه منشور اخلاق پژوهش
 \newgeometry{ignoreall=true, includeheadfoot=false, marginparwidth=0cm, marginparsep=0cm, textwidth=200mm, headheight=0cm, headsep=0cm, top=4mm, bottom=4mm, right=0.8cm, left=0.8cm}
-\begin{mdframed}[roundcorner=20pt, innerrightmargin =3mm, innerleftmargin=3mm, linewidth=0.4pt, outerlinewidth=0.4pt, middlelinewidth=0.4pt]
+%\begin{mdframed}[roundcorner=20pt, innerrightmargin =3mm, innerleftmargin=3mm, linewidth=0.4pt, outerlinewidth=0.4pt, middlelinewidth=0.4pt]
 {
 \begin{center}
 \vspace{1cm}
@@ -438,7 +462,20 @@
 \end{center}
 }
 \input{ethics.tex}
-\end{mdframed}
+%\end{mdframed}
 \pagebreak
 \restoregeometry
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\makebibliography#1{
+\onehalfspacing
+\pagebreak
+\latin
+
+\bibliographystyle{ieeetr}
+\renewcommand{\refname}{\rl{{مراجع}\hfill}}
+\bibliography{#1}
+
+\persian
+\pagebreak
 }
