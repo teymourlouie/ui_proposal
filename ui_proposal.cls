@@ -129,8 +129,8 @@
 \textbf{\centering درخواست تصویب طرح پیشنهادیه پایان‌نامه}
 }
 \end{mdframed}
-\vspace{-4mm}
-\begin{mdframed}[roundcorner=10pt, needspace=5mm, rightmargin=6.8cm, leftmargin=6.8cm, innertopmargin=1mm, innerbottommargin=1mm]
+\vspace{1mm}
+\begin{mdframed}[roundcorner=10pt, needspace=0mm, rightmargin=6.8cm, leftmargin=6.8cm, innertopmargin=1mm, innerbottommargin=1mm, align=center, innerrightmargin=5mm, innerleftmargin=2mm]
 {
  دکتری  
 \ifnum \pdf@strcmp{\@level}{دکتری} = 0
@@ -337,6 +337,8 @@
 \vspace{3mm}
 \pagebreak
 \restoregeometry
+%\newgeometry{ignoreall=true, includeheadfoot=false, marginparwidth=0cm, marginparsep=0cm, textwidth=198mm, headheight=0cm, headsep=0cm, top=3mm, bottom=5mm, right=10mm, left=10mm,includefoot}
+
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
